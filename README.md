@@ -7,4 +7,4 @@ Once you've allowed your camera, you can make a "victory sign" ✌️ ✌️ wit
 move your hands up and down ✋ and rotate to rotate the paddle. To throw the ball, make a "victory sign" ✌️.
 Each top and bottom screen bounce speeds up the ball.
 
-<a href="blank">live demo</a>
+<a href="https://web3kev.github.io/Pong/">live demo</a>
