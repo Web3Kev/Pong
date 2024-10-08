@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game with Hand-Recognition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css"> 
+</head>
+<body>
+    <!-- WebCam feed -->
+    <video id="webcamVideo" autoplay playsinline></video>
+    <canvas id="gameCanvas"></canvas>
+    <div id="header">
+        <div id="score">0 - 0</div>
+        <div class="speaker-toggle">
+            <img src="./assets/speaker-on.png" alt="Speaker" id="speaker-icon">
+        </div>
+    </div>
+    <div id="message">Please allow camera usage. <br><br> This apps uses hand-recognition as controls</div>
+    <div id="centralMessage">Hand Pong</div>
+    <div id="debug"></div>
+    <svg id="progressIndicator" viewBox="0 0 36 36">
+        <path d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            fill="none"
+            stroke="#444"
+            stroke-width="2"
+            stroke-dasharray="100, 100" />
+        <path id="progressPath"
+            d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            fill="none"
+            stroke="#4CAF50"
+            stroke-width="2"
+            stroke-dasharray="0, 100" />
+    </svg>
+
+    </script>
+    <script type="module">
+        import { toggleSound, updateSpeakerIcon } from './scripts/main.js';
+      
+        document.querySelector('.speaker-toggle').addEventListener('click', () => {
+          toggleSound();
+          updateSpeakerIcon();
+        });    
+      </script>
+</body>
+</html>
